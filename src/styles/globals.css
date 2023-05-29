@@ -1,0 +1,256 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+   
+
+    /* Chrome, Safari and Opera */
+    /* .no-scrollbar::-webkit-scrollbar {
+        
+    }
+
+    .no-scrollbar::-webkit-scrollbar-track {
+        background-color: transparent;
+    } */
+
+    /* .no-scrollbar {
+        -ms-overflow-style: none;
+        
+        scrollbar-width: none;
+       
+    } */
+
+    input:focus~label,
+    input:not(:placeholder-shown)~label {
+        @apply -translate-y-2 text-xsmall-regular;
+    }
+
+    input:focus~label {
+        @apply left-0;
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+    select:-webkit-autofill:focus {
+        border: 1px solid #212121;
+        -webkit-text-fill-color: #212121;
+        -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+        transition: background-color 5000s ease-in-out 0s;
+    }
+
+    /* input[type="search"]::-webkit-search-decoration,
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-results-button,
+    input[type="search"]::-webkit-search-results-decoration {
+        -webkit-appearance: none;
+    } */
+
+    .swiper {
+        width: 100%;
+        height: 100%;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        width: 400px !important;
+        /* Center slide text vertically */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .swiper-slide-active {
+        width: 400px;
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 90%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .topcollection-heading-line {
+        width: 10px;
+        height: 10px;
+        background-color: var(--color-default);
+    }
+    .list-item > li{
+        @apply mb-[1rem] mt-2 cursor-pointer tracking-widest xl:font-normal font-semibold uppercase pb-4 
+    }
+    .n-li > li{
+        @apply py-2 sm:text-xs font-normal xl:text-sm  
+    }
+    h5{
+        @apply font-semibold
+    }
+    .n-li li a{
+        @apply relative
+    }
+    .n-li li a::after{
+        @apply absolute content-['']  w-0 h-0.5 bg-red-400 -bottom-2 left-0 
+    }
+    .n-li li a:hover::after  {
+        @apply  animate-extend
+    }
+    /* absolute top-[50%] left-[50%] text-[6rem] translate-x-[-50%] translate-y-[-50%]  */
+    /* 
+  .instagram-icon-animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 6rem;
+    transition: all 2s ease-in-out;
+  }
+
+  .instagram-icon-animation-container:hover .instagram-icon-animation{
+    font-size: 2rem;
+    transform: rotate(-90deg);
+  }
+   */
+
+}
+
+@layer components {
+    .content-container {
+        @apply max-w-[1440px] w-full mx-auto px-8
+    }
+
+    .contrast-btn {
+        @apply px-4 py-2 border border-black rounded-full hover: bg-black hover:text-white transition-colors duration-200 ease-in;
+    }
+
+    .text-xsmall-regular {
+        @apply text-[10px] leading-4 font-normal;
+    }
+
+    .text-small-regular {
+        @apply text-xs leading-5 font-normal;
+    }
+
+    .text-small-semi {
+        @apply text-xs leading-5 font-semibold;
+    }
+
+    .text-base-regular {
+        @apply text-sm leading-6 font-normal;
+    }
+
+    .text-base-semi {
+        @apply text-sm leading-6 font-semibold;
+    }
+
+    .text-large-regular {
+        @apply text-base leading-6 font-normal;
+    }
+
+    .text-large-semi {
+        @apply text-base leading-6 font-semibold;
+    }
+
+    .text-xl-regular {
+        @apply text-2xl leading-[36px] font-normal;
+    }
+
+    .text-xl-semi {
+        @apply text-2xl leading-[36px] font-semibold;
+    }
+
+    .text-2xl-regular {
+        @apply text-[30px] leading-[48px] font-normal;
+    }
+
+    .text-2xl-semi {
+        @apply text-[30px] leading-[48px] font-semibold;
+    }
+
+    .text-3xl-regular {
+        @apply text-[36px] leading-[48px] font-normal;
+    }
+
+    .text-3xl-semi {
+        @apply text-[36px] leading-[48px] font-semibold;
+    }
+    .slider_hover{
+        @apply h-full w-full bg-[#8c0d2a] opacity-30 scale-0 group-hover:scale-100 origin-top-left transition duration-150 ease-in-out
+       }
+       .icon_hover{
+        @apply text-2xl hover:text-[var(--color-default)] hover:scale-[1.1] duration-150 cursor-pointer
+      }
+
+}
+@layer base {
+    :root {
+      --color-default:  #8c0d2a;
+      --color-primary: #ffff;
+      --color-secondary:#343a40;
+    }
+  
+  }
+*{
+    scroll-behavior:smooth;
+}
+  body{
+     background-image:url('https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80') ;
+     background-position: center;
+     background-size: cover;
+     overflow-y: scroll;
+     background-repeat: no-repeat;
+     overflow-x: hidden;
+     background-attachment: fixed;
+   
+   }
+
+ 
+  .swiper {
+    width: 100%;
+    height: 100%;
+    font-size: 5px;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .btn{
+ border-color: #8c0d2a;
+    
+    background-image: -webkit-linear-gradient(45deg, var(--color-default) 50%, transparent 50%);
+    background-image: linear-gradient(45deg, var(--color-default) 50%, transparent 50%);
+    background-position: 100%;
+    background-size: 400%;
+    -webkit-transition: background 500ms ease-in-out;
+    transition: background 500ms ease-in-out;
+ cursor: pointer;
+  }
+ .btn:hover {
+    color: #fff;
+    background-position: 0;
+  }
+
+
+
